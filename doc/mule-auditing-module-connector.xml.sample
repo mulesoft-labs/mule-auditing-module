@@ -1,0 +1,3 @@
+<!-- BEGIN_INCLUDE(mule-auditing-module:greet) -->
+    <mule-auditing-module:greet config-ref="" friend="#[map-payload:friend]" />
+<!-- END_INCLUDE(mule-auditing-module:greet) -->
