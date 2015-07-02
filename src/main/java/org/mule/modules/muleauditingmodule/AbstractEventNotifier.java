@@ -21,13 +21,13 @@ public class AbstractEventNotifier {
 	
 	public static final String EVENT_DATE = "EventDate";
 	
-	public static final String COTNEXT_INFORMATION = "ContextInformation";
+	public static final String CONTEXT_INFORMATION = "ContextInformation";
 	
 	protected static final Logger logger = LoggerFactory.getLogger(AbstractEventNotifier.class);
 	
 	protected final MuleContext context;
-	private final String endpointUri;
-	private final String transactionIdExpression;
+	protected final String endpointUri;
+	protected final String transactionIdExpression;
 	
 	public AbstractEventNotifier(MuleContext context, String endpointUri, String transactionIdExpression) {
 		this.context = context;
