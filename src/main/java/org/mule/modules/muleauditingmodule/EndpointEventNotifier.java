@@ -23,8 +23,13 @@ public class EndpointEventNotifier extends AbstractEventNotifier implements Endp
 		MuleMessage msg = (MuleMessage) notification.getSource();
 	    try {
 	    	HashMap<String, Object> auditEvent =  super.generateDefaultAuditEvent(msg, notification.getActionName().toUpperCase(), notification.getFlowConstruct().getName());
-	    	auditEvent.put(COTNEXT_INFORMATION, notification.getEndpoint());
-	    	super.sendAuditEvent(auditEvent);
+	    	auditEvent.put(CONTEXT_INFORMATION, notification.getEndpoint());
+	    	if(!notification.getEndpoint().equals(endpointUri)){
+	    		super.sendAuditEvent(auditEvent);
+	    	}
+	    	else {
+	    		logger.debug("Ignoring same uri endpoint");
+	    	}
 	    } catch (Throwable t) {
 	    	logger.error("Got exception on event notifier", t);
 	    }
