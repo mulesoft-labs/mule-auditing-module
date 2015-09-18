@@ -25,7 +25,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author MuleSoft, Inc.
  */
-@Module(name="mule-auditing-module", friendlyName="MuleAuditingModule")
+@Module(name="mule-auditing-module", friendlyName="Auditing Module")
 public class MuleAuditingModule {
 
 	private static final Logger logger = LoggerFactory.getLogger(MuleAuditingModule.class);
